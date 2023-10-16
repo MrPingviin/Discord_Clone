@@ -32,7 +32,8 @@ import Login from './pages/Login.vue'
   color: var(--text-color);
 }
 
-input {
+input,
+select {
   background: var(--input-color);
   border: none;
   border-radius: var(--border-radius);
@@ -41,7 +42,6 @@ input {
   color: var(--title-color);
   font-size: 1rem;
   outline: none;
-
 }
 
 button,

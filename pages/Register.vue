@@ -31,9 +31,18 @@
                 <div>
                     <label for="birthday">Date of Birth <Form_Required /></label>
                     <div class="Birthday__Selector">
-                        <input type="number" name="birth_day" placeholder="Day" required>
-                        <input type="number" name="birth_month" placeholder="Month" required>
-                        <input type="number" name="birth_year" placeholder="Year" required>
+                        <select name="birth_month" placeholder="Month" required>
+                            <option value="" disabled selected hidden>Month</option>
+                            <option v-for="(item, index) of Months" :value="index+1">{{item}}</option>
+                        </select>
+                        <select name="birth_day" placeholder="Day" required>
+                            <option value="" disabled selected hidden>Day</option>
+                            <option v-for="i in 31" :value="i">{{i}}</option>
+                        </select>
+                        <select name="birth_year" placeholder="Year" required>
+                            <option value="" disabled selected hidden>Year</option>
+                            <option v-for="i of getYears()" :value="i">{{i}}</option>
+                        </select>
                     </div>
                 </div>
                 <div>
@@ -48,16 +57,35 @@
 </template>
  
 <script setup lang='ts'>
+    const Months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
     const isDisplayNameHintVisible = ref(false);
     const isDisplayNameHintVisibleSwitcher = () => {
         isDisplayNameHintVisible.value = !isDisplayNameHintVisible.value;
     }
+
+    const getYears = (): number[] => {
+        const years = [];
+        const CurrentDate = new Date();
+        for (let i = CurrentDate.getFullYear(); i >= 1930; i--) {
+            years.push(i);
+        }
+        return years;
+    }
 </script>
 
-
-
-
- 
 <style scoped>
 h1 {
     font-size: 1.35rem;
