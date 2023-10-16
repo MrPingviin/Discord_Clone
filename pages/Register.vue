@@ -67,7 +67,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background: url("/login_background.svg");
     background-size: cover;
   }
