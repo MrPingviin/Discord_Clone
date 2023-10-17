@@ -24,6 +24,10 @@ import Login from './pages/Login.vue'
   --padding: 1rem;
 }
 
+:root {
+  background-color: var(--primary-color);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -195,6 +199,10 @@ form > div {
 @media screen and (max-width: 768px) {
   .Mobile {
     display: block;
+  }
+
+  .InputHint {
+    font-size: 0.65rem;
   }
 }
 </style>

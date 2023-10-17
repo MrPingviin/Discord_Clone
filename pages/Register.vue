@@ -5,13 +5,13 @@
             <img src="/discord_textlogo.svg" alt="Discord Logo" class="Mobile">
             <h1>Create an account</h1>
            </div>
-            <form action="#" method="POST">
+            <form action="/api/client/register" method="POST">
                 <div>
                     <label for="email">Email <Form_Required /></label>
                     <input type="text" placeholder="Email" name="email" required />
                 </div>
                 <div>
-                    <label for="displayname">Display Name </label>
+                    <label for="display_name">Display Name </label>
                     <input type="text" placeholder="Display Name" name="displayname" v-on:focusin="isDisplayNameHintVisibleSwitcher" v-on:focusout="isDisplayNameHintVisibleSwitcher"/>
                     <span v-if="isDisplayNameHintVisible" class="InputHint">This is how others see you. You can use special characters and emoji.</span>
                 </div>
@@ -57,6 +57,7 @@
 </template>
  
 <script setup lang='ts'>
+
     const Months = [
         "Jan",
         "Feb",

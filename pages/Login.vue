@@ -9,7 +9,7 @@
             <h2>We're so excited to see you again!</h2>
          </div>
         </div>
-        <form action="#" method="POST">
+        <form action="/api/client/login" method="POST">
           <div>
               <label for="email">Email <Form_Required /></label>
               <input type="text" placeholder="Email" name="email" required />
