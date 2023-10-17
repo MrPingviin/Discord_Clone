@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
         setResponseStatus(event, 200);
         return { message: "User created successfully." }
     } catch (err) {
-        return { message: "User creation failed." }
+        return { message: "User creation failed.", error: err.message }
     }
 })
 

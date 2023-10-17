@@ -9,7 +9,7 @@ const user_schema = new Schema({
     },
     display_name: {
         type: String,
-        unique: true
+        default: ""
     },
     username: {
         type: String,
